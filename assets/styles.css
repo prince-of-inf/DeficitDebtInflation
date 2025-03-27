@@ -1,0 +1,7 @@
+/* Tilt the range slider marks */
+.dash-range-slider .rc-slider-mark-text {
+    transform: rotate(-45deg);  /* Tilt the marks by 45 degrees */
+    white-space: nowrap;  /* Prevent the marks from wrapping */
+    transform-origin: center;  /* Rotate around the center of the mark */
+    margin-top: 10px;  /* Adjust the vertical spacing of the marks */
+}
