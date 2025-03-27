@@ -2,22 +2,7 @@
 # visit http://127.0.0.1:8050/ in your web browser.
 import numpy as np
 import scipy.stats
-# layouts https://dash-bootstrap-components.opensource.faculty.ai/docs/components/layout/
-# narysuj sobie jak chcesz żeby to wyglądało (bloczki), potem je wklep, optem wypełniaj
 
-# zawsze używaj DBC, to jest po prostu łatwiejsze
-
-# 3 główne Componenst layoutu to: Container, Row i Col
-# Card to taki mały kontenerk do którego łatwo dodać tytuł itp.
-
-# callbacks - podajesz co jest input co output po id. kiedy się strona odpala to robi się auto callback więc nie
-# musisz pisać funkcji na wykres - napisz ją w callbacku - musisz tylko umieścić elementy w divach i opisać tam slidery itp.
-
-# DOBRE RADY
-# stwórz funkcję tworzącą kartę do każðego typu elementu i powstawiaj elementy i stwórz callbacki - proste!
-
-# fine table example - and other simple apps
-# https://dash-example-index.herokuapp.com/filtered-csv-download
 
 from dash import Dash, html, dcc, Input, Output, callback, ctx
 import dash_bootstrap_components as dbc  # easier layouts
@@ -189,7 +174,6 @@ main_content = html.Div(
 
                     # STATS
                     dbc.Row([
-                        # Col width default - dostępne miejsce, width od 1-12 (automatyczny grid po 12 klatek, więc łątwo dzielić np. 3,3,6) lub 'auto' - na szerokość zawartości
                         dbc.Col(create_text_card("Card 1", "You clicked 0 times"), width=4, id="card-1"),
                         dbc.Col(create_text_card("Card 2", "You clicked 0 times"), width=4, id="card-2"),
                         dbc.Col(create_text_card("Card 3", "You clicked 0 times"), width=4, id="card-3"),
@@ -356,12 +340,6 @@ app.layout = html.Div(
     ],
     #style={"margin": 0},
 )
-
-# lokalnie trzeba w app = Dash
-# # Custom CSS to rotate the marks
-# app.css.append_css({
-#     'external_url': '/assets/styles.css'
-# })
 
 if __name__ == '__main__':
     app.run(debug=False)
